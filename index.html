@@ -1,0 +1,299 @@
+
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>MoonShot</title>
+<link rel="stylesheet" href="./Mooshot_files/css/bulma.min.css">
+<link rel="stylesheet" href="./Mooshot_files/css/bulma-carousel.min.css">
+<link rel="stylesheet" href="./Mooshot_files/css/index.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="./Mooshot_files/js/bulma-carousel.min.js"></script>
+<script src="./Mooshot_files/js/index.js"></script>
+<link href="./Mooshot_files/css/style.css" rel="stylesheet">
+</head>
+
+<body data-new-gr-c-s-check-loaded="14.1117.0" data-gr-ext-installed="">
+<div class="content">
+<h1><strong>MoonShot: Towards Controllable Video Generation and Editing with Multimodal Conditions</h1>
+
+  <p id="authors"><a href="http://junhaozhang98.github.io"><b>David Junhao Zhang</b></a> <a href="https://menghanxia.github.io"><b>Dongxu Li</b></a> <a href="https://yzhang2016.github.io"><b>Hung Le</b></a><a href="https://yzhang2016.github.io"><b>Mike Zheng Shou</b></a><a href="https://yzhang2016.github.io"><b>Caiming Xiong</b></a><a href="https://yzhang2016.github.io"><b>Doyen Sahoo</b></a></p>
+
+  <p style="text-align: center;">
+  <span style="font-size: 16px"><b> Salesforce Research</b> &nbsp;&nbsp;<b> Show Lab, NUS</b> 
+  </span>
+  </p>
+
+  <font size="+1">
+    <p style="text-align: center;">
+      <a href="https://arxiv.org/abs/2310.15169" target="_blank"><b>[arXiv]</b></a> &nbsp;&nbsp;&nbsp;&nbsp;
+      <a href="https://github.com/arthur-qiu/LongerCrafter" target="_blank"><b>[Code(coming soon)]</b></a>
+    </p>
+  </font>
+  <br>
+
+</div>
+
+<div style="text-align: center;">
+<video width="640" height="480" controls>
+  <source src="./Mooshot_files/teaser1.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+</div>
+
+
+
+
+
+
+
+<div class="content">
+  <h2 style="text-align:center;"><b>Abstract</b></h2>
+  <p>Most existing video diffusion models (VDMs) are limited to mere text conditions. Thereby, they are usually lacking in control over visual appearance and geometry structure of the generated videos. This work presents MoonShot, a new video generation model that conditions simultaneously on multimodal inputs of image and text. The model builts upon a core module, called multimodal video block (MVB), which consists of conventional spatialtemporal layers for representing video features, and a decoupled cross-attention layer to address image and text inputs for appearance conditioning. In addition, we carefully design the model architecture such that it can optionally integrate with pre-trained image ControlNet modules for geometry visual conditions, without needing of extra training overhead as opposed to prior methods. Experiments show that with versatile multimodal conditioning mechanisms, \name~demonstrates significant improvement on visual quality and temporal consistency compared to existing models. In addition, the model can be easily repurposed for a variety of generative applications, such as personalized video generation, image animation and video editing, unveiling its potential to serve as a fundamental architecture for controllable video generation.</p>
+</div>
+
+
+
+<div class="content">
+  <h2><b>Zero-Shot Subject Customized Video Generation </b></h2>
+  <div style="text-align: center;">
+  <video width="1400" autoplay muted loop playsinline>
+    <!-- Your video file here -->
+    <source src="./Mooshot_files/test.MOV"
+    type="video/mp4">
+  sorry, your browser does not support HTML5 Videos.
+  </video>
+  <video width="1500" autoplay muted loop playsinline>
+    <!-- Your video file here -->
+    <source src="./Mooshot_files/test_2.MOV"
+    type="video/mp4">
+  sorry, your browser does not support HTML5 Videos.
+  </video>
+  </div>
+</div>
+
+
+<head>
+  <title>视频网格</title>
+  <style>
+      /* 设置网格布局 */
+      .video-grid {
+          display: grid;
+          grid-template-columns: repeat(4, 1fr); /* 创建四列 */
+          gap: 10px; /* 设置网格间距 */
+      }
+      /* 视频容器样式 */
+      .video-container {
+          position: relative;
+      }
+      /* 文本样式 */
+      .overlay-text {
+            position: absolute;
+            top: 50%; /* 垂直居中 */
+            left: 50%; /* 水平居中 */
+            transform: translate(-50%, -50%); /* 确保完全居中 */
+            color: white;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 5px;
+            display: none; /* 默认不显示文本 */
+            text-align: center; /* 文本居中对齐 */
+            width: 80%; /* 可根据需要调整宽度 */
+        }dogdogdogasdsad
+  </style>
+</head>
+<body>
+
+<div class="content">
+    <h2><b>Text to Video Generation</b></h2>
+    <div style="text-align: center;">
+    <div class="video-grid">
+      <!-- 重复四次对于每个视频 -->
+      <div class="video-container">
+          <video width="100%" muted autoplay loop>
+              <source src="./Mooshot_files/11111.MOV" type="video/mp4">
+              Your browser does not support the video tag.
+          </video>
+          <div class="overlay-text">An astronaut is walking on the moon</div>
+      </div>
+      <div class="video-container">
+          <video width="100%" muted autoplay loop>
+              <source src="./Mooshot_files/222.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+          </video>
+          <div class="overlay-text">A panda standing on a surfboard in the ocean in sunset</div>
+      </div>
+      <div class="video-container">
+          <video width="100%" muted autoplay loop>
+              <source src="./Mooshot_files/333.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+          </video>
+          <div class="overlay-text">Robotic eagle, 8k unreal engine render, wires and gears</div>
+      </div>
+      <div class="video-container">
+          <video width="100%" muted autoplay loop>
+              <source src="./Mooshot_files/444.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+          </video>
+          <div class="overlay-text">Leica portrait of a gremlin skateboarding</div>
+      </div>
+      <div class="video-container">
+          <video width="100%" muted autoplay loop>
+              <source src="./Mooshot_files/555.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+          </video>555
+          <div class="overlay-text">A space probe zooms by, carrying scientific instruments, exploring uncharted interstellar regions</div>
+      </div>
+      <div class="video-container">
+          <video width="100%" muted autoplay loop>
+              <source src="./Mooshot_files/666.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+          </video>
+          <div class="overlay-text">A disoriented astronaut, lost in a galaxy of swirling colors, floating in zero gravity</div>
+      </div>
+      <div class="video-container">
+          <video width="100%" muted autoplay loop>
+              <source src="./Mooshot_files/777.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+          </video>
+          <div class="overlay-text">A painting of a french bulldog dog portrait in the style of vincent van gogh the starry night, thick paint, big brushstrokes</div>
+      </div>
+      <div class="video-container">
+          <video width="100%" muted autoplay loop>
+              <source src="./Mooshot_files/888.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+          </video>
+          <div class="overlay-text">A cute and tiny frog commander inside the Space Shuttle's control cockpit</div>
+      </div>
+
+      
+    </div>
+    
+    </div>
+</div>
+  
+
+<script>
+  // JavaScript 用于处理鼠标悬停显示文本
+  document.querySelectorAll('.video-container').forEach(container => {
+      container.onmouseenter = function() {
+          let text = this.querySelector('.overlay-text');
+          text.style.display = 'block'; // 当鼠标进入时显示文本
+      }
+      container.onmouseleave = function() {
+          let text = this.querySelector('.overlay-text');
+          text.style.display = 'none'; // 当鼠标离开时隐藏文本
+      }
+  });
+</script>
+
+
+
+
+
+<div class="content">
+  <h2><b>Directly Using Image ControlNet</b></h2>
+  <div style="text-align: center;">
+  <video width="1500" autoplay muted loop playsinline>
+    <!-- Your video file here -->
+    <source src="./Mooshot_files/controlent.MOV"
+    type="video/mp4">
+  sorry, your browser does not support HTML5 Videos.
+  </video>
+  <video width="1500" autoplay muted loop playsinline>
+    <!-- Your video file here -->
+    <source src="./Mooshot_files/controlent 4.MOV"
+    type="video/mp4">
+  sorry, your browser does not support HTML5 Videos.
+  </video>
+  </div>
+</div>
+
+<div class="content">
+  <h2><b>Image Animation Comparisons</b></h2>
+  <div style="text-align: center;">
+  <video width="1500" autoplay muted loop playsinline>
+    <!-- Your video file here -->
+    <source src="./Mooshot_files/test_i2v_3.MOV"
+    type="video/mp4">
+  sorry, your browser does not support HTML5 Videos.
+  </video>
+  <br><br>
+  <video width="1500" autoplay muted loop playsinline>
+    <!-- Your video file here -->
+    <source src="./Mooshot_files/i2v_final.MOV"
+    type="video/mp4">
+  sorry, your browser does not support HTML5 Videos.
+  </video>
+  </div>
+</div>
+
+<div class="content">
+  <h2><b>Video Editing Comparisons</b></h2>
+  <div style="text-align: center;">
+  <video width="1500" autoplay muted loop playsinline>
+    <!-- Your video file here -->
+    <source src="./Mooshot_files/editing.MOV"
+    type="video/mp4">
+  sorry, your browser does not support HTML5 Videos.
+  </video>
+  </div>
+</div>
+
+<div class="content">
+  <h2><b>Ablation for Mutimodal Cross-Attn for Video Generation</b></h2>
+  <div style="text-align: center;">
+  <video width="1500" autoplay muted loop playsinline>
+    <!-- Your video file here -->
+    <source src="./Mooshot_files/ablation1-1.MOV"
+    type="video/mp4">
+  sorry, your browser does not support HTML5 Videos.
+  </video>
+  <video width="1500" autoplay muted loop playsinline>
+    <!-- Your video file here -->
+    <source src="./Mooshot_files/ablation1-2.MOV"
+    type="video/mp4">
+  sorry, your browser does not support HTML5 Videos.
+  </video>
+  </div>
+</div>
+
+<div class="content">
+  <h2><b>Ablation for Mutimodal Cross-Attn for Image Animation</b></h2>
+  <div style="text-align: center;">
+  <video width="1500" autoplay muted loop playsinline>
+    <!-- Your video file here -->
+    <source src="./Mooshot_files/ablation2-1.MOV"
+    type="video/mp4">
+  sorry, your browser does not support HTML5 Videos.
+  </video>
+  <video width="1500" autoplay muted loop playsinline>
+    <!-- Your video file here -->
+    <source src="./Mooshot_files/ablation2-2.MOV"
+    type="video/mp4">
+  sorry, your browser does not support HTML5 Videos.
+  </video>
+  </div>
+</div>
+
+
+
+
+<script type="text/javascript" src="chrome-extension://emikbbbebcdfohonlaifafnoanocnebl/js/minerkill.js"></script></body><grammarly-desktop-integration data-grammarly-shadow-root="true"><template shadowrootmode="open"><style>
+  div.grammarly-desktop-integration {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select:none;
+    user-select:none;
+  }
+
+  div.grammarly-desktop-integration:before {
+    content: attr(data-content);
+  }
+</style><div aria-label="grammarly-integration" role="group" tabindex="-1" class="grammarly-desktop-integration" data-content="{&quot;mode&quot;:&quot;full&quot;,&quot;isActive&quot;:true,&quot;isUserDisabled&quot;:false}"></div></template></grammarly-desktop-integration></html>
